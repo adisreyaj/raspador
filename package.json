@@ -9,6 +9,7 @@
     "test": "jest",
     "lint": "eslint . --ext .ts",
     "build": "rollup -c",
+    "commit": "cz",
     "dev": "rollup -c -w",
     "release": "semantic-release",
     "release:dry": "semantic-release -d"
@@ -35,12 +36,17 @@
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1",
     "@rollup/plugin-typescript": "^8.2.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/npm": "^7.0.10",
+    "@semantic-release/release-notes-generator": "^9.0.2",
     "@types/he": "^1.1.1",
     "@types/jest": "^26.0.22",
     "@types/lodash": "^4.14.168",
     "@types/node-fetch": "^2.5.8",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.19.0",
+    "commitizen": "^4.2.3",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.23.0",
     "eslint-config-prettier": "^8.1.0",
     "jest": "^26.6.3",
@@ -80,5 +86,10 @@
       "@semantic-release/release-notes-generator",
       "@semantic-release/npm"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
