@@ -27,6 +27,8 @@ import raspador, { ld$, Root, Selectors } from 'raspador';
 })();
 ```
 
+`ld$` function is exposed for get data form linkedData in the structured schema.
+
 ## Local Development
 
 1. Clone or download the repo
