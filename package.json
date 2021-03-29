@@ -68,7 +68,7 @@
     "memoize-one": "^5.1.1"
   },
   "publishConfig": {
-    "access": "restricted"
+    "access": "public"
   },
   "release": {
     "branches": [
