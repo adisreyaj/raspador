@@ -1,5 +1,5 @@
-import typescript from '@rollup/plugin-typescript';
 import { terser } from 'rollup-plugin-terser';
+import typescript from 'rollup-plugin-typescript2';
 import pkg from './package.json';
 
 export default {
@@ -15,8 +15,5 @@ export default {
     },
   ],
   external: [...Object.keys(pkg.dependencies || {})],
-  plugins: [
-    typescript(),
-    terser(), // minifies generated bundles
-  ],
+  plugins: [typescript(), terser()],
 };

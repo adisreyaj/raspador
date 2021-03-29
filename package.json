@@ -1,14 +1,17 @@
 {
   "name": "raspador",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "A simple and powerful library for scraping metadata",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
     "lint": "eslint . --ext .ts",
     "build": "rollup -c",
-    "dev": "rollup -c -w"
+    "dev": "rollup -c -w",
+    "release": "semantic-release",
+    "release:dry": "semantic-release -d"
   },
   "keywords": [
     "web",
@@ -23,22 +26,32 @@
     "name": "Adithya Sreyaj",
     "email": "adi.sreyaj@gmail.com"
   },
+  "repository": {
+    "url": "https://github.com/adisreyaj/raspador.git",
+    "type": "git"
+  },
   "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1",
     "@rollup/plugin-typescript": "^8.2.1",
+    "@types/he": "^1.1.1",
     "@types/jest": "^26.0.22",
+    "@types/lodash": "^4.14.168",
+    "@types/node-fetch": "^2.5.8",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.19.0",
     "eslint": "^7.23.0",
+    "eslint-config-prettier": "^8.1.0",
     "jest": "^26.6.3",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
     "rollup": "^2.43.1",
     "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
     "semantic-release": "^17.4.2",
     "ts-node": "^9.1.1",
+    "tslib": "^2.1.0",
     "typescript": "^4.2.3"
   },
   "lint-staged": {
@@ -47,5 +60,25 @@
     ],
     "*.ts": "eslint --cache --fix",
     "*.{js,css,md}": "prettier --write"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.5",
+    "he": "^1.2.0",
+    "lodash": "^4.17.21",
+    "memoize-one": "^5.1.1"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "release": {
+    "branches": [
+      "main",
+      "next"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm"
+    ]
   }
 }

@@ -1,3 +1,5 @@
-import { test } from './utils/rule';
+import raspador from './raspador';
 
-console.log(test());
+export { MetaData, Root, Selector, Selectors, SelectorValue } from '@interface/interfaces';
+export { linkedData$ as ld$ } from '@utils/linked-data';
+export default raspador;
