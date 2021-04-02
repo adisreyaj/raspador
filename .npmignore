@@ -4,3 +4,5 @@ src
 *.js
 *.tgz
 tsconfig.json
+CONTRIBUTING.md
+ISSUES_TEMPLATE.md

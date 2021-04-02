@@ -1,6 +1,6 @@
-import { MetaData, Root, Selectors } from '@interface/interfaces';
-import { loadHTML } from '@utils/load-html';
-import { runSelectors } from '@utils/selectors';
+import { MetaData, Root, Selectors } from './interface/interfaces';
+import { loadHTML } from './utils/load-html';
+import { runSelectors } from './utils/selectors';
 
 /**!
  *  Initialize `raspador` with the html to scrape
