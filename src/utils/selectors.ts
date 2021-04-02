@@ -1,4 +1,4 @@
-import { SelectorValue } from '@interface/interfaces';
+import { SelectorValue } from '../interface/interfaces';
 
 export const runSelectors = (selectors: SelectorValue[]): SelectorValue => {
   let index = 0;
