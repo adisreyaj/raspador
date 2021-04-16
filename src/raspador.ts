@@ -7,8 +7,12 @@ import { runSelectors } from './utils/selectors';
  * @param - the html string
  */
 export default (html: string): ((selectors: Selectors) => MetaData | null) => {
-  const $ = loadHTML(html);
-  return computeValues($);
+  try {
+    const $ = loadHTML(html);
+    return computeValues($);
+  } catch (error) {
+    throw new Error('[Raspador]: Failed to load html');
+  }
 };
 
 const computeValues = ($: Root) => (selectors: Selectors): MetaData | null => {
@@ -20,6 +24,7 @@ const computeValues = ($: Root) => (selectors: Selectors): MetaData | null => {
       try {
         value = runSelectors(metadata[curr]);
       } catch (error) {
+        console.error('[Raspador]: Error occurred', error)
         value = null;
       }
       return {

@@ -1,4 +1,4 @@
-<img src="./raspador.png" alt="Raspador" height="200px" style="margin:0 auto;display:block;margin-bottom:20px;">
+<img src="./raspador.png" alt="Raspador" align="center" height="200px" style="margin:0 auto;display:block;margin-bottom:20px;">
 <h1 align="center">Raspador - Metadata scraping made easy!</h1>
 <p align="center">
   <img src="https://img.shields.io/badge/TypeScript-v4.2-blue?style=flat-square" alt="TypeScript">
@@ -100,11 +100,16 @@ import raspador, { ld$, Root, Selectors } from 'raspador';
   const html = await fetch(
     'https://blog.sreyaj.dev/implementing-feature-flags-in-angular'
   ).then((res) => res.text());
+  // Initialize raspador by passing in the html
   const scraper = raspador(html);
+
+  // Setup the selectors
   const selectors: Selectors = ($: Root) => ({
     title: [$('meta[property="og:title"]').attr('content'), $('title').text()],
     author: [ld$($, 'creator[0]')],
   });
+  
+  // Pass the selectors to get the result
   const result = scraper(selectors);
   console.log({ result });
 })();
