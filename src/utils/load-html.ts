@@ -1,3 +1,3 @@
-import cheerio from 'cheerio';
+import { load } from 'cheerio';
 import { Root } from '../interface/interfaces';
-export const loadHTML = (html: string): Root => cheerio.load(html);
+export const loadHTML = (html: string): Root => load(html);
