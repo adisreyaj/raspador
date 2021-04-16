@@ -151,5 +151,4 @@ Please ⭐️ this repository if this project helped you!
 ## Inspiration and Idea
 
 Show your support for MetaScraper:
-
 [MetaScraper](https://github.com/microlinkhq/metascraper)
